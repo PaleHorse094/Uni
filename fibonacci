@@ -1,17 +1,18 @@
-options = "y"
-n = int(input("Which term of the Fibonacci Sequence would you like to calculate?: ")) #Defining the Nth sequence as user input
-
-if n > 30:
-        input("Term calculation not permitted. Please enter a term between 1 - 30. Press y to reload: ")
-
+n = int(input("Which term of the Fibonacci Sequence would you like to calculate? Enter a number between 1 - 30: ")) #Defining the Nth sequence as user input
 def fibonacci (n): #Defining the fiboniacci sequence which is the int (n)
-    if n==0: #if n is equal to 0 - Complexity O(1) as 0 is always first 
+    if n == 0: #if n is equal to 0 - Complexity O(1) as 0 is always first 
         return 0 #return 0
-    elif n==1: #else if n is equal to 1 - Complexity O(1) as 1 is always second
+    elif n > 30:
+        print("Term calculation not permitted. Please input a term between 1 - 30.")
+    elif n == 1: #else if n is equal to 1 - Complexity O(1) as 1 is always second
         return 1 #return 1
     else: #else if n is not intergers 0 or 1
-        return fibonacci (n-1) + fibonacci (n-2) #return n number defined by user, calculate by adding previous number by next number
-print("Number " +str(n) + " of the Fibonacci sequenuce = " +str(fibonacci(n))) #print nth sequence
+        return fibonacci (n-1) + fibonacci (n-2) #return n number defined by user, itterative calculation. Complexity O(n)
+print("Term " +str(n) + " of the Fibonacci sequenuce = " +str(fibonacci(n))) #print nth sequence
+
+
+
+
 
 
 
